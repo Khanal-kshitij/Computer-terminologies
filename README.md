@@ -1,4 +1,5 @@
 #computer terminologies-
+
 Algorithm: A step-by-step procedure for solving a problem or performing a task, often used in programming and data processing.
 
 API (Application Programming Interface): A set of rules and protocols that allows different software applications to communicate with each other.

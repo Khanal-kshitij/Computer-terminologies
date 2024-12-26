@@ -1,0 +1,435 @@
+#1.WAP to find the roots of a quadratic equation
+import cmath
+
+# Input coefficients
+a = float(input("Enter coefficient a: "))
+b = float(input("Enter coefficient b: "))
+c = float(input("Enter coefficient c: "))
+
+# Calculate the discriminant
+discriminant = b**2 - 4*a*c
+
+# Calculate the two roots
+root1 = (-b + cmath.sqrt(discriminant)) / (2 * a)
+root2 = (-b - cmath.sqrt(discriminant)) / (2 * a)
+
+# Display the roots
+print("The roots of the quadratic equation are:")
+print(f"Root 1: {root1}")
+print(f"Root 2: {root2}")
+
+
+
+# 2.Function to check if a number is prime
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Function to generate all prime numbers up to n
+def primes_up_to_n(n):
+    primes = []
+    for num in range(2, n + 1):
+        if is_prime(num):
+            primes.append(num)
+    return primes
+
+# Function to generate the first n prime numbers
+def first_n_primes(n):
+    primes = []
+    num = 2
+    while len(primes) < n:
+        if is_prime(num):
+            primes.append(num)
+        num += 1
+    return primes
+
+# Main function to accept input and display results
+def main():
+    n = int(input("Enter a number n: "))
+
+    # Check if n is prime
+    if is_prime(n):
+        print(f"{n} is a prime number.")
+    else:
+        print(f"{n} is not a prime number.")
+
+    # Generate all primes up to n
+    primes_up_to = primes_up_to_n(n)
+    print(f"Prime numbers up to {n}: {primes_up_to}")
+
+    # Generate first n prime numbers
+    first_n = first_n_primes(n)
+    print(f"First {n} prime numbers: {first_n}")
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+# 3.Function to check if a number is prime
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Function to generate all prime numbers up to n
+def primes_up_to_n(n):
+    primes = []
+    for num in range(2, n + 1):
+        if is_prime(num):
+            primes.append(num)
+    return primes
+
+# Function to generate the first n prime numbers
+def first_n_primes(n):
+    primes = []
+    num = 2
+    while len(primes) < n:
+        if is_prime(num):
+            primes.append(num)
+        num += 1
+    return primes
+
+# Main function to accept input and display results
+def main():
+    n = int(input("Enter a number n: "))
+
+    # Check if n is prime
+    if is_prime(n):
+        print(f"{n} is a prime number.")
+    else:
+        print(f"{n} is not a prime number.")
+
+    # Generate all primes up to n
+    primes_up_to = primes_up_to_n(n)
+    print(f"Prime numbers up to {n}: {primes_up_to}")
+
+    # Generate first n prime numbers
+    first_n = first_n_primes(n)
+    print(f"First {n} prime numbers: {first_n}")
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+# 4. Function to check if the character is a letter, numeric digit, or special character
+def check_character(character):
+    if character.isalpha():  # Check if the character is a letter
+        if character.isupper():
+            print(f"{character} is an uppercase letter.")
+        else:
+            print(f"{character} is a lowercase letter.")
+    elif character.isdigit():  # Check if the character is a digit
+        digit_to_text = {
+            '0': 'ZERO', '1': 'ONE', '2': 'TWO', '3': 'THREE',
+            '4': 'FOUR', '5': 'FIVE', '6': 'SIX', '7': 'SEVEN',
+            '8': 'EIGHT', '9': 'NINE'
+        }
+        print(f"{character} is a numeric digit and its name is {digit_to_text[character]}.")
+    else:  # If it's neither a letter nor a digit, it's a special character
+        print(f"{character} is a special character.")
+
+# Main function to accept input and perform the task
+def main():
+    character = input("Enter a character: ")
+
+    # Check if input is exactly one character
+    if len(character) == 1:
+        check_character(character)
+    else:
+        print("Please enter a single character.")
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+
+
+# 5.Function to find the frequency of a character in a string
+def frequency_of_character(string, char):
+    frequency = string.count(char)
+    print(f"The frequency of '{char}' in '{string}' is: {frequency}")
+
+# Function to replace a character by another character in a string
+def replace_character(string, old_char, new_char):
+    new_string = string.replace(old_char, new_char)
+    print(f"String after replacing '{old_char}' with '{new_char}': {new_string}")
+
+# Function to remove the first occurrence of a character from a string
+def remove_first_occurrence(string, char):
+    index = string.find(char)
+    if index != -1:
+        new_string = string[:index] + string[index + 1:]
+        print(f"String after removing the first occurrence of '{char}': {new_string}")
+    else:
+        print(f"Character '{char}' not found in the string.")
+
+# Function to remove all occurrences of a character from a string
+def remove_all_occurrences(string, char):
+    new_string = string.replace(char, "")
+    print(f"String after removing all occurrences of '{char}': {new_string}")
+
+# Main function to perform the operations based on user input
+def main():
+    string = input("Enter a string: ")
+
+    # Frequency of a character
+    char = input("\nEnter a character to find its frequency: ")
+    frequency_of_character(string, char)
+
+    # Replace a character
+    old_char = input("\nEnter the character to replace: ")
+    new_char = input("Enter the new character: ")
+    replace_character(string, old_char, new_char)
+
+    # Remove first occurrence of a character
+    char = input("\nEnter the character to remove the first occurrence: ")
+    remove_first_occurrence(string, char)
+
+    # Remove all occurrences of a character
+    char = input("\nEnter the character to remove all occurrences: ")
+    remove_all_occurrences(string, char)
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+
+
+# 6.Function to swap the first n characters of two strings
+def swap_first_n_characters(str1, str2, n):
+    # Check if n is within the bounds of both strings
+    if n > len(str1) or n > len(str2):
+        print("Error: 'n' is greater than the length of one or both strings.")
+        return None
+
+    # Swap the first n characters
+    new_str1 = str2[:n] + str1[n:]
+    new_str2 = str1[:n] + str2[n:]
+
+    print(f"After swapping the first {n} characters:")
+    print("String 1:", new_str1)
+    print("String 2:", new_str2)
+
+# Main function to accept input and perform the swap
+def main():
+    str1 = input("Enter the first string: ")
+    str2 = input("Enter the second string: ")
+    n = int(input("Enter the number of characters to swap: "))
+
+    swap_first_n_characters(str1, str2, n)
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+
+
+
+#7. Write a function that accepts two strings and returns the indices of all the
+# occurrences of the second string in the first string as a list. If the second
+# string is not present in the first string then it should return -1.
+def find_all_indices(string, substring):
+
+  indices = []
+  index = 0
+  while True:
+    index = string.find(substring, index)
+    if index == -1:
+      break
+    indices.append(index)
+    index += 1
+
+  return indices if indices else -1 
+
+# Example usage:
+string = "hello world, hello again"
+substring = "hello"
+
+result = find_all_indices(string, substring)
+print(result) 
+
+
+
+
+
+
+#8. WAP to create a list of the cubes of only the even integers appearing in the input list
+#(may have elements of other types also) using the following:
+#a. 'for' loop
+#b. list comprehension 
+def cubes_of_even_integers(input_list):
+   
+    # Using a 'for' loop
+    cubes_list = []
+    for item in input_list:
+        if isinstance(item, int) and item % 2 == 0:
+            cubes_list.append(item ** 3)
+
+    # Using list comprehension
+    cubes_list_comprehension = [item ** 3 for item in input_list if isinstance(item, int) and item % 2 == 0]
+
+    return cubes_list, cubes_list_comprehension
+
+# Example usage
+input_list = [1, 2, 'a', 3, 4, 5.0, 6, 7]
+cubes_for_loop, cubes_comprehension = cubes_of_even_integers(input_list)
+
+print("Using 'for' loop:", cubes_for_loop)
+print("Using list comprehension:", cubes_comprehension)
+
+
+
+
+
+#9.WAP to read a file and
+#a. Print the total number of characters, words and lines in the file.
+#b. Calculate the frequency of each character in the file. Use a variable of dictionary
+#type to maintain the count.
+#c. Print the words in reverse order.
+#d. Copy even lines of the file to a file named ‘File1’ and odd lines to another file named ‘File2’. 
+def process_file(file_name):
+    with open(file_name, 'r') as file:
+        lines = file.readlines()
+
+    # Part (a): Count characters, words, and lines
+    total_lines = len(lines)
+    total_characters = sum(len(line) for line in lines)
+    total_words = sum(len(line.split()) for line in lines)
+    print(f"Total Characters: {total_characters}")
+    print(f"Total Words: {total_words}")
+    print(f"Total Lines: {total_lines}")
+
+    # Part (b): Frequency of each character
+    char_frequency = {}
+    for line in lines:
+        for char in line:
+            if char in char_frequency:
+                char_frequency[char] += 1
+            else:
+                char_frequency[char] = 1
+    print("Character Frequency:", char_frequency)
+
+    # Part (c): Print words in reverse order
+    reversed_words = [word[::-1] for line in lines for word in line.split()]
+    print("Words in reverse order:", ' '.join(reversed_words))
+
+    # Part (d): Copy even and odd lines into separate files
+    with open('File1.txt', 'w') as file1, open('File2.txt', 'w') as file2:
+        for i, line in enumerate(lines):
+            if (i + 1) % 2 == 0:  # Even line
+                file1.write(line)
+            else:  # Odd line
+                file2.write(line)
+
+# Example usage
+file_name = 'input.txt'  # Replace with your file path
+process_file(file_name)
+
+
+
+
+#10.WAP to define a class Point with coordinates x and y as attributes. Create relevant
+#methods and print the objects. Also define a method distance to calculate the distance
+#between any two point objects.
+import math
+
+class Point:
+    def __init__(self, x, y):
+        # Initialize the x and y coordinates
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        # Representation of the Point object for printing
+        return f"Point({self.x}, {self.y})"
+
+    def distance(self, other_point):
+        # Calculate the distance between two points
+        return math.sqrt((self.x - other_point.x) ** 2 + (self.y - other_point.y) ** 2)
+
+
+# Example usage
+# Create two points
+p1 = Point(3, 4)
+p2 = Point(7, 1)
+
+# Print the points
+print("Point 1:", p1)
+print("Point 2:", p2)
+
+# Calculate and print the distance
+print("Distance between p1 and p2:", p1.distance(p2))
+
+
+
+
+#11.Write a function that prints a dictionary where the keys are numbers between 1 and 5
+#and the values are cubes of the keys. 
+def print_cubes_dictionary():
+    # Create dictionary with numbers 1 to 5 as keys and their cubes as values
+    cubes_dict = {i: i**3 for i in range(1, 6)}
+    print(cubes_dict)
+
+# Example usage
+print_cubes_dictionary()
+
+
+
+#12.
+# Given tuple
+t1 = (1, 2, 5, 7, 9, 2, 4, 6, 8, 10)
+
+# Part (a): Print half the values in one line and the other half in the next line
+half = len(t1) // 2
+print("First half:", t1[:half])
+print("Second half:", t1[half:])
+
+# Part (b): Create a tuple with even numbers from t1
+even_tuple = tuple(x for x in t1 if x % 2 == 0)
+print("Tuple with even numbers:", even_tuple)
+
+# Part (c): Concatenate t2 with t1
+t2 = (11, 13, 15)
+concatenated_tuple = t1 + t2
+print("Concatenated tuple:", concatenated_tuple)
+
+# Part (d): Find and print the maximum and minimum values
+max_value = max(concatenated_tuple)
+min_value = min(concatenated_tuple)
+print("Maximum value:", max_value)
+print("Minimum value:", min_value)
+
+
+
+
+#13.WAP to accept a name from a user. Raise and handle appropriate exception(s) if the
+#text entered by the user contains digits and/or special characters.
+def validate_name(name):
+
+  if not name.isalpha():
+    raise ValueError("Name should only contain alphabets.")
+  return name
+
+try:
+  user_name = input("Enter your name: ")
+  validated_name = validate_name(user_name)
+  print(f"Valid name: {validated_name}")
+
+except ValueError as e:
+  print(f"Invalid name: {e}")
+
